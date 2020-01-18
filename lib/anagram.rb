@@ -6,16 +6,7 @@ class Anagram
   end 
   
   def match(anagrams)
-    array = []
-    split_word = self.word.split(//)
-    
-    anagrams.each do |word|
-      anagram_split = word.split(//)
-      if split_word.sort == anagram_split.sort
-        array << word 
-      end 
-    end 
-    array 
+    anagrams.select {|word| word.split(//).sort == @word.split(//).sort}
   end 
 end 
       
